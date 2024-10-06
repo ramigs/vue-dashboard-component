@@ -1,47 +1,74 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { Icon } from '@iconify/vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
   <main>
-    <TheWelcome />
+    <div class="card">
+      <div class="header">
+        <div>
+          <h2>Transactions</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <button class="btn">
+          <span>See All Transactions</span>
+          <Icon
+            icon="material-symbols:chevron-right"
+            width="1.4em"
+            height="1.4em"
+            color="#4F46E5"
+          />
+        </button>
+      </div>
+    </div>
   </main>
 </template>
 
 <style lang="scss" scoped>
-header {
-  line-height: 1.5;
+main {
+  min-height: 100vh;
+  background-color: #fee2e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  max-width: 1024px;
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow:
+    0 1px 3px 0 rgb(0 0 0 / 0.1),
+    0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  p {
+    font-weight: 300;
   }
 
-  header .wrapper {
+  button {
     display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+    color: #4f46e5;
+    font-size: 16px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
   }
 }
 </style>
