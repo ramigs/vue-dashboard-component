@@ -1,5 +1,50 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
+import BaseTable from './components/BaseTable.vue'
+import BaseBadge from './components/BaseBadge.vue'
+
+const columns = [
+  { id: 'status', label: 'Status' },
+  { id: 'type', label: 'Type' },
+  { id: 'price', label: 'Price' },
+  { id: 'vendor', label: 'Vendor' },
+  { id: 'icon' }
+]
+
+const rows = [
+  {
+    status: 'Completed',
+    type: 'Card payment',
+    typeInfo: 'Visa card **** 4831',
+    price: '$182.94',
+    date: 'Jan 17, 2024',
+    vendor: 'Amazon'
+  },
+  {
+    status: 'Completed',
+    type: 'Card payment',
+    typeInfo: 'Mastercard **** 6642',
+    price: '$99.00',
+    date: 'Jan 17, 2024',
+    vendor: 'Facebook'
+  },
+  {
+    status: 'Pending',
+    type: 'Bank payment',
+    typeInfo: 'Account ****882',
+    price: '$249.89',
+    date: 'Jan 16, 2024',
+    vendor: 'Netflix'
+  },
+  {
+    status: 'Canceled',
+    type: 'Card payment',
+    typeInfo: 'Amex card **** 5666',
+    price: '$10.99',
+    date: 'Jan 16, 2024',
+    vendor: 'Amazon Prime'
+  }
+]
 </script>
 
 <template>
@@ -20,6 +65,22 @@ import { Icon } from '@iconify/vue'
           />
         </button>
       </div>
+      <BaseTable :rows="rows" :columns="columns">
+        <template #status="{ row }">
+          <BaseBadge :status="row.status" />
+        </template>
+        <template #type="{ row }">
+          <span style="display: block; font-weight: bold">{{ row.typeInfo }}</span>
+          <span>{{ row.type }}</span>
+        </template>
+        <template #price="{ row }">
+          <span style="display: block; font-weight: bold">{{ row.price }}</span>
+          <span>{{ row.date }}</span>
+        </template>
+        <template #icon>
+          <Icon icon="fluent:more-horizontal-28-filled" width="1.2em" height="1.2em" />
+        </template>
+      </BaseTable>
     </div>
   </main>
 </template>
