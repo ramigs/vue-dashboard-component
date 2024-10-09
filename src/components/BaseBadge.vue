@@ -8,7 +8,7 @@ defineProps<{
   status: Status
 }>()
 
-const stylingVariants: { [key in Status]: BadgeColor } = {
+const statusColors: { [key in Status]: BadgeColor } = {
   Completed: 'green',
   Pending: 'yellow',
   Canceled: 'red'
@@ -16,7 +16,7 @@ const stylingVariants: { [key in Status]: BadgeColor } = {
 </script>
 
 <template>
-  <div class="badge" :class="`badge--${stylingVariants[status]}`">
+  <div class="badge" :class="`badge--${statusColors[status]}`">
     <Icon icon="oui:dot" width="1.2em" height="1.2em" />
     <span style="font-weight: 500">
       {{ status }}
