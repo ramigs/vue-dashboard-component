@@ -26,7 +26,7 @@ const stylingVariants: { [key in Status]: BadgeColor } = {
 
 <style lang="scss" scoped>
 .badge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 4px;
   padding-block: 4px;

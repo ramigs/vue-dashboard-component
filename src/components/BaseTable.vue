@@ -34,20 +34,22 @@ defineProps<{
 
 table {
   min-width: 100%;
+  border-collapse: collapse;
+}
+
+tr:not(:last-of-type) {
+  border-bottom: 1px solid rgb(243 244 246);
+}
+
+tr:hover {
+  background-color: rgb(243 244 246);
+  cursor: pointer;
 }
 
 td {
   font-weight: 300;
   white-space: nowrap;
-  padding-inline: 24px;
-  padding-block: 16px;
-
-  &:first-of-type {
-    padding-left: 0;
-  }
-
-  &:last-of-type {
-    padding-right: 0;
-  }
+  padding-inline: 32px;
+  padding-block: 24px;
 }
 </style>
