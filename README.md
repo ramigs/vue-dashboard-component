@@ -1,5 +1,8 @@
 # vue-dashboard-component
 
+Originally from [This is a great front-end challenge for anyone to try (using
+Vue)](https://www.youtube.com/watch?v=LtLSHxObeZ0).
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
